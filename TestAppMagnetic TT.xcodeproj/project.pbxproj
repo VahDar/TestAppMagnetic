@@ -1,0 +1,656 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FC800D772BBAF18E001344C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC800D762BBAF18E001344C8 /* AppDelegate.swift */; };
+		FC800D792BBAF18E001344C8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC800D782BBAF18E001344C8 /* SceneDelegate.swift */; };
+		FC800D7B2BBAF18E001344C8 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC800D7A2BBAF18E001344C8 /* MainScreenViewController.swift */; };
+		FC800D802BBAF18F001344C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC800D7F2BBAF18F001344C8 /* Assets.xcassets */; };
+		FC800D832BBAF18F001344C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC800D812BBAF18F001344C8 /* LaunchScreen.storyboard */; };
+		FC800D902BBB029D001344C8 /* UIColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC800D8F2BBB029D001344C8 /* UIColors.swift */; };
+		FC800D942BBB06BA001344C8 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC800D932BBB06BA001344C8 /* UIButton.swift */; };
+		FC800D992BBB0E11001344C8 /* ImageAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC800D982BBB0E11001344C8 /* ImageAssets.swift */; };
+		FC800D9C2BBB132C001344C8 /* WifiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC800D9B2BBB132C001344C8 /* WifiModel.swift */; };
+		FC800D9E2BBB160F001344C8 /* wifi.json in Resources */ = {isa = PBXBuildFile; fileRef = FC800D9D2BBB160F001344C8 /* wifi.json */; };
+		FC800DA02BBB1644001344C8 /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC800D9F2BBB1644001344C8 /* Bundle-Decodable.swift */; };
+		FC800DA42BBB17E5001344C8 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = FC800DA32BBB17E5001344C8 /* Lottie */; };
+		FC800DA72BBB17F3001344C8 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FC800DA62BBB17F3001344C8 /* SnapKit */; };
+		FC800DA92BBB17F3001344C8 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = FC800DA82BBB17F3001344C8 /* SnapKit-Dynamic */; };
+		FC800DAB2BBB18D2001344C8 /* radar.json in Resources */ = {isa = PBXBuildFile; fileRef = FC800DAA2BBB18D2001344C8 /* radar.json */; };
+		FC800DB22BBB1CB0001344C8 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC800DB12BBB1CB0001344C8 /* UIImage.swift */; };
+		FC800DB42BBB23A6001344C8 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC800DB32BBB23A6001344C8 /* CustomButton.swift */; };
+		FC800DB72BBB330D001344C8 /* InformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC800DB62BBB330D001344C8 /* InformationView.swift */; };
+		FC800DB92BBB40E9001344C8 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC800DB82BBB40E9001344C8 /* Roboto-Black.ttf */; };
+		FC800DBB2BBB40EF001344C8 /* Roboto-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC800DBA2BBB40EF001344C8 /* Roboto-BlackItalic.ttf */; };
+		FC800DC82BBB40FE001344C8 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC800DBC2BBB40FD001344C8 /* Roboto-Thin.ttf */; };
+		FC800DC92BBB40FE001344C8 /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC800DBD2BBB40FD001344C8 /* Roboto-ThinItalic.ttf */; };
+		FC800DCB2BBB40FE001344C8 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC800DBF2BBB40FD001344C8 /* Roboto-Medium.ttf */; };
+		FC800DCD2BBB40FE001344C8 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC800DC12BBB40FD001344C8 /* Roboto-Bold.ttf */; };
+		FC800DCE2BBB40FE001344C8 /* Roboto-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC800DC22BBB40FD001344C8 /* Roboto-Italic.ttf */; };
+		FC800DCF2BBB40FE001344C8 /* Roboto-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC800DC32BBB40FD001344C8 /* Roboto-MediumItalic.ttf */; };
+		FC800DD02BBB40FE001344C8 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC800DC42BBB40FD001344C8 /* Roboto-Light.ttf */; };
+		FC800DD12BBB40FE001344C8 /* Roboto-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC800DC52BBB40FD001344C8 /* Roboto-LightItalic.ttf */; };
+		FC800DD22BBB40FE001344C8 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC800DC62BBB40FD001344C8 /* Roboto-Regular.ttf */; };
+		FC800DD32BBB40FE001344C8 /* Roboto-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC800DC72BBB40FE001344C8 /* Roboto-BoldItalic.ttf */; };
+		FC800DD82BBB4EB6001344C8 /* MagneticViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC800DD72BBB4EB6001344C8 /* MagneticViewController.swift */; };
+		FC800DDB2BBC1087001344C8 /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC800DDA2BBC1087001344C8 /* ScanViewController.swift */; };
+		FC800DE02BBC1C3E001344C8 /* DeviceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC800DDF2BBC1C3E001344C8 /* DeviceListViewController.swift */; };
+		FC800DE32BBC41D2001344C8 /* DeviceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC800DE22BBC41D2001344C8 /* DeviceTableViewCell.swift */; };
+		FC800DE62BBC5272001344C8 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC800DE52BBC5272001344C8 /* DetailViewController.swift */; };
+		FC800DEB2BBC6229001344C8 /* CustomDevider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC800DEA2BBC6229001344C8 /* CustomDevider.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		FC800D732BBAF18E001344C8 /* TestAppMagnetic TT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TestAppMagnetic TT.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC800D762BBAF18E001344C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FC800D782BBAF18E001344C8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		FC800D7A2BBAF18E001344C8 /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
+		FC800D7F2BBAF18F001344C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FC800D822BBAF18F001344C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FC800D842BBAF18F001344C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC800D8F2BBB029D001344C8 /* UIColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColors.swift; sourceTree = "<group>"; };
+		FC800D932BBB06BA001344C8 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		FC800D982BBB0E11001344C8 /* ImageAssets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAssets.swift; sourceTree = "<group>"; };
+		FC800D9B2BBB132C001344C8 /* WifiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WifiModel.swift; sourceTree = "<group>"; };
+		FC800D9D2BBB160F001344C8 /* wifi.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = wifi.json; sourceTree = "<group>"; };
+		FC800D9F2BBB1644001344C8 /* Bundle-Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
+		FC800DAA2BBB18D2001344C8 /* radar.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = radar.json; sourceTree = "<group>"; };
+		FC800DB12BBB1CB0001344C8 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		FC800DB32BBB23A6001344C8 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		FC800DB62BBB330D001344C8 /* InformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationView.swift; sourceTree = "<group>"; };
+		FC800DB82BBB40E9001344C8 /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
+		FC800DBA2BBB40EF001344C8 /* Roboto-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BlackItalic.ttf"; sourceTree = "<group>"; };
+		FC800DBC2BBB40FD001344C8 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
+		FC800DBD2BBB40FD001344C8 /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
+		FC800DBF2BBB40FD001344C8 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		FC800DC12BBB40FD001344C8 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		FC800DC22BBB40FD001344C8 /* Roboto-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Italic.ttf"; sourceTree = "<group>"; };
+		FC800DC32BBB40FD001344C8 /* Roboto-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-MediumItalic.ttf"; sourceTree = "<group>"; };
+		FC800DC42BBB40FD001344C8 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
+		FC800DC52BBB40FD001344C8 /* Roboto-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-LightItalic.ttf"; sourceTree = "<group>"; };
+		FC800DC62BBB40FD001344C8 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		FC800DC72BBB40FE001344C8 /* Roboto-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BoldItalic.ttf"; sourceTree = "<group>"; };
+		FC800DD72BBB4EB6001344C8 /* MagneticViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagneticViewController.swift; sourceTree = "<group>"; };
+		FC800DDA2BBC1087001344C8 /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
+		FC800DDF2BBC1C3E001344C8 /* DeviceListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceListViewController.swift; sourceTree = "<group>"; };
+		FC800DE22BBC41D2001344C8 /* DeviceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceTableViewCell.swift; sourceTree = "<group>"; };
+		FC800DE52BBC5272001344C8 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		FC800DEA2BBC6229001344C8 /* CustomDevider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDevider.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FC800D702BBAF18E001344C8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC800DA42BBB17E5001344C8 /* Lottie in Frameworks */,
+				FC800DA72BBB17F3001344C8 /* SnapKit in Frameworks */,
+				FC800DA92BBB17F3001344C8 /* SnapKit-Dynamic in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FC800D6A2BBAF18E001344C8 = {
+			isa = PBXGroup;
+			children = (
+				FC800D752BBAF18E001344C8 /* TestAppMagnetic TT */,
+				FC800D742BBAF18E001344C8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FC800D742BBAF18E001344C8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FC800D732BBAF18E001344C8 /* TestAppMagnetic TT.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FC800D752BBAF18E001344C8 /* TestAppMagnetic TT */ = {
+			isa = PBXGroup;
+			children = (
+				FC800DAE2BBB19C2001344C8 /* Screen */,
+				FC800D9A2BBB1318001344C8 /* Model */,
+				FC800D8D2BBAF2D6001344C8 /* Common */,
+				FC800D8B2BBAF235001344C8 /* Application */,
+				FC800D8A2BBAF207001344C8 /* Resources */,
+			);
+			path = "TestAppMagnetic TT";
+			sourceTree = "<group>";
+		};
+		FC800D8A2BBAF207001344C8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FC800DAA2BBB18D2001344C8 /* radar.json */,
+				FC800D9D2BBB160F001344C8 /* wifi.json */,
+				FC800D842BBAF18F001344C8 /* Info.plist */,
+				FC800D812BBAF18F001344C8 /* LaunchScreen.storyboard */,
+				FC800D7F2BBAF18F001344C8 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		FC800D8B2BBAF235001344C8 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				FC800D762BBAF18E001344C8 /* AppDelegate.swift */,
+				FC800D782BBAF18E001344C8 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		FC800D8C2BBAF254001344C8 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				FC800DB82BBB40E9001344C8 /* Roboto-Black.ttf */,
+				FC800DBA2BBB40EF001344C8 /* Roboto-BlackItalic.ttf */,
+				FC800DC12BBB40FD001344C8 /* Roboto-Bold.ttf */,
+				FC800DC72BBB40FE001344C8 /* Roboto-BoldItalic.ttf */,
+				FC800DC22BBB40FD001344C8 /* Roboto-Italic.ttf */,
+				FC800DC42BBB40FD001344C8 /* Roboto-Light.ttf */,
+				FC800DC52BBB40FD001344C8 /* Roboto-LightItalic.ttf */,
+				FC800DBF2BBB40FD001344C8 /* Roboto-Medium.ttf */,
+				FC800DC32BBB40FD001344C8 /* Roboto-MediumItalic.ttf */,
+				FC800DC62BBB40FD001344C8 /* Roboto-Regular.ttf */,
+				FC800DBC2BBB40FD001344C8 /* Roboto-Thin.ttf */,
+				FC800DBD2BBB40FD001344C8 /* Roboto-ThinItalic.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		FC800D8D2BBAF2D6001344C8 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				FC800DB52BBB23AC001344C8 /* CustomElements */,
+				FC800D972BBB0DC2001344C8 /* Assets */,
+				FC800D912BBB02A1001344C8 /* Extensions */,
+				FC800D8C2BBAF254001344C8 /* Fonts */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		FC800D912BBB02A1001344C8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FC800D8F2BBB029D001344C8 /* UIColors.swift */,
+				FC800D932BBB06BA001344C8 /* UIButton.swift */,
+				FC800D9F2BBB1644001344C8 /* Bundle-Decodable.swift */,
+				FC800DB12BBB1CB0001344C8 /* UIImage.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FC800D972BBB0DC2001344C8 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				FC800D982BBB0E11001344C8 /* ImageAssets.swift */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		FC800D9A2BBB1318001344C8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FC800D9B2BBB132C001344C8 /* WifiModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FC800DAE2BBB19C2001344C8 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				FC800DDE2BBC1C04001344C8 /* DeviceListScreen */,
+				FC800DD92BBC106A001344C8 /* ScanScreen */,
+				FC800DD42BBB4ABB001344C8 /* MagneticScreen */,
+				FC800DAF2BBB19CB001344C8 /* MainScreen */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		FC800DAF2BBB19CB001344C8 /* MainScreen */ = {
+			isa = PBXGroup;
+			children = (
+				FC800D7A2BBAF18E001344C8 /* MainScreenViewController.swift */,
+				FC800DB02BBB19EC001344C8 /* View */,
+			);
+			path = MainScreen;
+			sourceTree = "<group>";
+		};
+		FC800DB02BBB19EC001344C8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FC800DB62BBB330D001344C8 /* InformationView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FC800DB52BBB23AC001344C8 /* CustomElements */ = {
+			isa = PBXGroup;
+			children = (
+				FC800DB32BBB23A6001344C8 /* CustomButton.swift */,
+				FC800DEA2BBC6229001344C8 /* CustomDevider.swift */,
+			);
+			path = CustomElements;
+			sourceTree = "<group>";
+		};
+		FC800DD42BBB4ABB001344C8 /* MagneticScreen */ = {
+			isa = PBXGroup;
+			children = (
+				FC800DD72BBB4EB6001344C8 /* MagneticViewController.swift */,
+			);
+			path = MagneticScreen;
+			sourceTree = "<group>";
+		};
+		FC800DD92BBC106A001344C8 /* ScanScreen */ = {
+			isa = PBXGroup;
+			children = (
+				FC800DDA2BBC1087001344C8 /* ScanViewController.swift */,
+			);
+			path = ScanScreen;
+			sourceTree = "<group>";
+		};
+		FC800DDE2BBC1C04001344C8 /* DeviceListScreen */ = {
+			isa = PBXGroup;
+			children = (
+				FC800DE92BBC6161001344C8 /* ViewController */,
+				FC800DE42BBC5254001344C8 /* DetailScreen */,
+			);
+			path = DeviceListScreen;
+			sourceTree = "<group>";
+		};
+		FC800DE12BBC4199001344C8 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				FC800DE22BBC41D2001344C8 /* DeviceTableViewCell.swift */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		FC800DE42BBC5254001344C8 /* DetailScreen */ = {
+			isa = PBXGroup;
+			children = (
+				FC800DE52BBC5272001344C8 /* DetailViewController.swift */,
+			);
+			path = DetailScreen;
+			sourceTree = "<group>";
+		};
+		FC800DE92BBC6161001344C8 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FC800DDF2BBC1C3E001344C8 /* DeviceListViewController.swift */,
+				FC800DE12BBC4199001344C8 /* TableViewCell */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FC800D722BBAF18E001344C8 /* TestAppMagnetic TT */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FC800D872BBAF18F001344C8 /* Build configuration list for PBXNativeTarget "TestAppMagnetic TT" */;
+			buildPhases = (
+				FC800D6F2BBAF18E001344C8 /* Sources */,
+				FC800D702BBAF18E001344C8 /* Frameworks */,
+				FC800D712BBAF18E001344C8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "TestAppMagnetic TT";
+			packageProductDependencies = (
+				FC800DA32BBB17E5001344C8 /* Lottie */,
+				FC800DA62BBB17F3001344C8 /* SnapKit */,
+				FC800DA82BBB17F3001344C8 /* SnapKit-Dynamic */,
+			);
+			productName = "TestAppMagnetic TT";
+			productReference = FC800D732BBAF18E001344C8 /* TestAppMagnetic TT.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FC800D6B2BBAF18E001344C8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					FC800D722BBAF18E001344C8 = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
+				};
+			};
+			buildConfigurationList = FC800D6E2BBAF18E001344C8 /* Build configuration list for PBXProject "TestAppMagnetic TT" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FC800D6A2BBAF18E001344C8;
+			packageReferences = (
+				FC800DA22BBB17E5001344C8 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				FC800DA52BBB17F3001344C8 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
+			productRefGroup = FC800D742BBAF18E001344C8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FC800D722BBAF18E001344C8 /* TestAppMagnetic TT */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FC800D712BBAF18E001344C8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC800DC82BBB40FE001344C8 /* Roboto-Thin.ttf in Resources */,
+				FC800DCF2BBB40FE001344C8 /* Roboto-MediumItalic.ttf in Resources */,
+				FC800DCD2BBB40FE001344C8 /* Roboto-Bold.ttf in Resources */,
+				FC800DAB2BBB18D2001344C8 /* radar.json in Resources */,
+				FC800D9E2BBB160F001344C8 /* wifi.json in Resources */,
+				FC800D832BBAF18F001344C8 /* LaunchScreen.storyboard in Resources */,
+				FC800DD22BBB40FE001344C8 /* Roboto-Regular.ttf in Resources */,
+				FC800DD02BBB40FE001344C8 /* Roboto-Light.ttf in Resources */,
+				FC800DBB2BBB40EF001344C8 /* Roboto-BlackItalic.ttf in Resources */,
+				FC800D802BBAF18F001344C8 /* Assets.xcassets in Resources */,
+				FC800DC92BBB40FE001344C8 /* Roboto-ThinItalic.ttf in Resources */,
+				FC800DD32BBB40FE001344C8 /* Roboto-BoldItalic.ttf in Resources */,
+				FC800DD12BBB40FE001344C8 /* Roboto-LightItalic.ttf in Resources */,
+				FC800DCB2BBB40FE001344C8 /* Roboto-Medium.ttf in Resources */,
+				FC800DCE2BBB40FE001344C8 /* Roboto-Italic.ttf in Resources */,
+				FC800DB92BBB40E9001344C8 /* Roboto-Black.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FC800D6F2BBAF18E001344C8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC800D942BBB06BA001344C8 /* UIButton.swift in Sources */,
+				FC800DB22BBB1CB0001344C8 /* UIImage.swift in Sources */,
+				FC800DDB2BBC1087001344C8 /* ScanViewController.swift in Sources */,
+				FC800D9C2BBB132C001344C8 /* WifiModel.swift in Sources */,
+				FC800D7B2BBAF18E001344C8 /* MainScreenViewController.swift in Sources */,
+				FC800DA02BBB1644001344C8 /* Bundle-Decodable.swift in Sources */,
+				FC800DE02BBC1C3E001344C8 /* DeviceListViewController.swift in Sources */,
+				FC800DEB2BBC6229001344C8 /* CustomDevider.swift in Sources */,
+				FC800DE62BBC5272001344C8 /* DetailViewController.swift in Sources */,
+				FC800D992BBB0E11001344C8 /* ImageAssets.swift in Sources */,
+				FC800DB42BBB23A6001344C8 /* CustomButton.swift in Sources */,
+				FC800D902BBB029D001344C8 /* UIColors.swift in Sources */,
+				FC800DE32BBC41D2001344C8 /* DeviceTableViewCell.swift in Sources */,
+				FC800DD82BBB4EB6001344C8 /* MagneticViewController.swift in Sources */,
+				FC800DB72BBB330D001344C8 /* InformationView.swift in Sources */,
+				FC800D772BBAF18E001344C8 /* AppDelegate.swift in Sources */,
+				FC800D792BBAF18E001344C8 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FC800D812BBAF18F001344C8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FC800D822BBAF18F001344C8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FC800D852BBAF18F001344C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FC800D862BBAF18F001344C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FC800D882BBAF18F001344C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UYW8HNCU5F;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "TestAppMagnetic TT/Resources/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "me.vakhtang.Currency.TestAppMagnetic-TT";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FC800D892BBAF18F001344C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UYW8HNCU5F;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "TestAppMagnetic TT/Resources/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "me.vakhtang.Currency.TestAppMagnetic-TT";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FC800D6E2BBAF18E001344C8 /* Build configuration list for PBXProject "TestAppMagnetic TT" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC800D852BBAF18F001344C8 /* Debug */,
+				FC800D862BBAF18F001344C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FC800D872BBAF18F001344C8 /* Build configuration list for PBXNativeTarget "TestAppMagnetic TT" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC800D882BBAF18F001344C8 /* Debug */,
+				FC800D892BBAF18F001344C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FC800DA22BBB17E5001344C8 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.4.1;
+			};
+		};
+		FC800DA52BBB17F3001344C8 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FC800DA32BBB17E5001344C8 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FC800DA22BBB17E5001344C8 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+		FC800DA62BBB17F3001344C8 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FC800DA52BBB17F3001344C8 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		FC800DA82BBB17F3001344C8 /* SnapKit-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FC800DA52BBB17F3001344C8 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = "SnapKit-Dynamic";
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = FC800D6B2BBAF18E001344C8 /* Project object */;
+}

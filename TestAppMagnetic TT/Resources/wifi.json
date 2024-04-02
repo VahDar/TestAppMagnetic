@@ -1,0 +1,107 @@
+[
+    {
+        "name": "Wifi-Home-1",
+        "status": true,
+        "ip": "192.168.1.1",
+        "macAddress": "00:A0:C9:14:C8:29",
+        "hostname": "home-router"
+    },
+    {
+        "name": "Wifi-Office-1",
+        "status": false,
+        "ip": "192.168.2.1",
+        "macAddress": "Not Available",
+        "hostname": "office-router"
+    },
+    {
+        "name": "Wifi-Cafe-1",
+        "status": true,
+        "ip": "192.168.3.1",
+        "macAddress": "00:A0:C9:25:D3:9A",
+        "hostname": "cafe-router"
+    },
+    {
+        "name": "Wifi-Library-1",
+        "status": true,
+        "ip": "192.168.4.1",
+        "macAddress": "00:A0:C9:8B:6F:51",
+        "hostname": "library-router"
+    },
+    {
+        "name": "Wifi-Mall-1",
+        "status": false,
+        "ip": "192.168.5.1",
+        "macAddress": "Not Available",
+        "hostname": "mall-router"
+    },
+    {
+        "name": "Wifi-Restaurant-1",
+        "status": true,
+        "ip": "192.168.6.1",
+        "macAddress": "00:A0:C9:DA:68:75",
+        "hostname": "restaurant-router"
+    },
+    {
+        "name": "Wifi-Hotel-1",
+        "status": false,
+        "ip": "192.168.7.1",
+        "macAddress": "Not Available",
+        "hostname": "hotel-router"
+    },
+    {
+        "name": "Wifi-Park-1",
+        "status": true,
+        "ip": "192.168.8.1",
+        "macAddress": "00:A0:C9:AA:BB:CC",
+        "hostname": "park-router"
+    },
+    {
+        "name": "Wifi-School-1",
+        "status": false,
+        "ip": "192.168.9.1",
+        "macAddress": "Not Available",
+        "hostname": "school-router"
+    },
+    {
+        "name": "Wifi-University-1",
+        "status": true,
+        "ip": "192.168.10.1",
+        "macAddress": "00:A0:C9:22:23:24",
+        "hostname": "university-router"
+    },
+    {
+        "name": "Wifi-Hospital-1",
+        "status": false,
+        "ip": "192.168.11.1",
+        "macAddress": "Not Available",
+        "hostname": "hospital-router"
+    },
+    {
+        "name": "Wifi-Gym-1",
+        "status": true,
+        "ip": "192.168.12.1",
+        "macAddress": "00:A0:C9:33:44:55",
+        "hostname": "gym-router"
+    },
+    {
+        "name": "Wifi-Cinema-1",
+        "status": false,
+        "ip": "192.168.13.1",
+        "macAddress": "Not Available",
+        "hostname": "cinema-router"
+    },
+    {
+        "name": "Wifi-Museum-1",
+        "status": true,
+        "ip": "192.168.14.1",
+        "macAddress": "00:A0:C9:66:77:88",
+        "hostname": "museum-router"
+    },
+    {
+        "name": "Wifi-Airport-1",
+        "status": false,
+        "ip": "192.168.15.1",
+        "macAddress": "Not Available",
+        "hostname": "airport-router"
+    }
+]
