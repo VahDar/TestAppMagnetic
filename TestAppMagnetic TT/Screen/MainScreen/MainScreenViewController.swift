@@ -76,7 +76,7 @@ class MainScreenViewController: UIViewController {
     private lazy var wifiImage: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(named: "routerImage")
-        image.contentMode = .scaleAspectFill
+        image.contentMode = .scaleAspectFit
         image.clipsToBounds = true
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
@@ -108,20 +108,19 @@ class MainScreenViewController: UIViewController {
         }
         
         imageBackground.snp.makeConstraints { make in
-            make.height.equalTo(329)
-            make.width.equalTo(390)
             make.top.leading.trailing.equalToSuperview()
+            make.bottom.equalTo(informationView.snp.top).offset(49)
         }
         
         wifiImage.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(107)
-            make.centerX.equalToSuperview()
-            make.height.equalTo(149)
-            make.width.equalTo(323.5)
+            make.top.equalTo(imageBackground.snp.top).offset(107)
+            make.left.equalToSuperview().offset(33)
+            make.right.equalToSuperview().offset(-33)
+            make.bottom.equalTo(informationView.snp.top).offset(-24)
         }
         
         informationView.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(280)
+            make.bottom.equalTo(mainStackView.snp.top).offset(-15)
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-20)
         }

@@ -10,15 +10,25 @@ import QuartzCore
 
 class MagneticViewController: UIViewController {
     
+    //MARK: - Properties
+    private var isAnimating = false
+    
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLayout()
         setupUI()
-        searchButtonPressed()  
+        searchButtonPressed()
     }
     
-    // View
+    // MARK: - View
+    
+    private lazy var rotationContainer: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     private lazy var circleArrowImage: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(named: ImageAssets.circleArrow.rawValue)
@@ -70,7 +80,7 @@ class MagneticViewController: UIViewController {
     private lazy var groupImage: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(named: ImageAssets.groupImage.rawValue)
-        image.contentMode = .scaleAspectFill
+        image.contentMode = .scaleAspectFit
         image.clipsToBounds = true
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
@@ -92,7 +102,12 @@ class MagneticViewController: UIViewController {
     
     //MARK: - Layout
     private func setupLayout() {
-        [speedometerImage, circleArrowImage, arrowImage, infoLabel, searchButton, backgroundImage, groupImage].forEach(view.addSubview)
+        
+        [rotationContainer, speedometerImage, infoLabel, searchButton, backgroundImage, groupImage].forEach(view.addSubview)
+        rotationContainer.addSubview(circleArrowImage)
+        rotationContainer.addSubview(arrowImage)
+        rotationContainer.sendSubviewToBack(circleArrowImage)
+        rotationContainer.layoutIfNeeded()
         
         speedometerImage.snp.makeConstraints { make in
             make.right.equalToSuperview().offset(-20)
@@ -101,15 +116,19 @@ class MagneticViewController: UIViewController {
             make.top.equalToSuperview().offset(391)
         }
         
-        circleArrowImage.snp.makeConstraints { make in
+        rotationContainer.snp.makeConstraints { make in
             make.top.equalTo(speedometerImage.snp.bottom).offset(-25)
             make.centerX.equalTo(speedometerImage.snp.centerX)
         }
         
+        circleArrowImage.snp.makeConstraints { make in
+            make.centerY.equalTo(rotationContainer.snp.centerY)
+            make.centerX.equalTo(rotationContainer.snp.centerX)
+        }
+        
         arrowImage.snp.makeConstraints { make in
-            make.centerY.equalTo(circleArrowImage.snp.centerY)
-            make.right.equalTo(circleArrowImage.snp.right).offset(-15)
-            
+            make.centerY.equalTo(rotationContainer.snp.centerY)
+            make.centerX.equalTo(rotationContainer.snp.centerX).offset(-35)
         }
         
         infoLabel.snp.makeConstraints { make in
@@ -131,8 +150,16 @@ class MagneticViewController: UIViewController {
         }
         
         groupImage.snp.makeConstraints { make in
-            make.center.equalTo(backgroundImage.snp.center)
+            make.top.equalToSuperview().offset(109)
+            make.bottom.equalTo(speedometerImage.snp.top).offset(-92)
+            make.left.equalToSuperview().offset(33)
+            make.right.equalToSuperview().offset(-33)
+            
         }
+    }
+    
+    @objc func backButtonPressed() {
+        self.navigationController?.popViewController(animated: true)
     }
     
     //MARK: - Animation
@@ -140,17 +167,49 @@ class MagneticViewController: UIViewController {
         searchButton.addTarget(self, action: #selector(animateArrow), for: .touchUpInside)
     }
     
-    @objc func backButtonPressed() {
-        self.navigationController?.popViewController(animated: true)
+    @objc private func animateArrow() {
+        isAnimating ? stopAnimation() : startAnimation()
     }
     
-    @objc private func animateArrow() {
-        let rotationAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
-        rotationAnimation.fromValue = 0
-        rotationAnimation.toValue = CGFloat.pi
-        rotationAnimation.duration = 2.0
-        rotationAnimation.fillMode = CAMediaTimingFillMode.forwards
-        rotationAnimation.isRemovedOnCompletion = false
-        arrowImage.layer.add(rotationAnimation, forKey: nil)
+    
+    private func startAnimation() {
+        searchButton.setTitle("Stop", for: .normal)
+        isAnimating = true
+        
+        let forwardAnimation = CABasicAnimation(keyPath: "transform.rotation")
+        forwardAnimation.fromValue = 0
+        forwardAnimation.toValue = CGFloat.pi
+        forwardAnimation.duration = 5.0
+        forwardAnimation.fillMode = .forwards
+        forwardAnimation.isRemovedOnCompletion = false
+        
+        rotationContainer.layer.add(forwardAnimation, forKey: "forwardAnimation")
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+            self.infoLabel.text = "50 µT"
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+            self.infoLabel.text = "100 µT"
+        }
+    }
+    
+    private func stopAnimation() {
+        searchButton.setTitle("Search", for: .normal)
+        isAnimating = false
+        self.infoLabel.text = "Search checking"
+        
+        let reverseAnimation = CABasicAnimation(keyPath: "transform.rotation")
+        reverseAnimation.fromValue = CGFloat.pi
+        reverseAnimation.toValue = 0
+        reverseAnimation.duration = 2.0
+        reverseAnimation.fillMode = .forwards
+        reverseAnimation.isRemovedOnCompletion = false
+        
+        rotationContainer.layer.add(reverseAnimation, forKey: "reverseAnimation")
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            self.rotationContainer.transform = .identity
+        }
     }
 }

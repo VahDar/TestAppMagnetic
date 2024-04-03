@@ -11,10 +11,25 @@ class CustomButton: UIButton {
     
     private var iconImageView: UIImageView!
     private var titleLbl: UILabel!
+
+    // MARK: - Check button size
+    override func layoutSubviews() {
+        super.layoutSubviews()
+
+        let buttonWidth = self.bounds.size.width
+        let buttonHeight = self.bounds.size.height
+
+        if buttonWidth < 80 || buttonHeight < 80 {
+            titleLbl.font = UIFont(name: "Roboto-Regular", size: 11)
+        } else if buttonWidth < 100 || buttonHeight < 100 {
+            titleLbl.font = UIFont(name: "Roboto-Regular", size: 13)
+        } else {
+            titleLbl.font = UIFont(name: "Roboto-Regular", size: 17)
+        }
+    }
     
     init(icon: UIImage?, title: String) {
         super.init(frame: .zero)
-        
         
         iconImageView = UIImageView(image: icon)
         titleLbl = UILabel()
@@ -23,7 +38,6 @@ class CustomButton: UIButton {
         
         iconImageView.contentMode = .scaleAspectFit
         iconImageView.translatesAutoresizingMaskIntoConstraints = false
-        
         
         titleLbl.text = title
         titleLbl.textAlignment = .center
@@ -43,7 +57,6 @@ class CustomButton: UIButton {
         
         titleLbl.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         titleLbl.topAnchor.constraint(equalTo: iconImageView.bottomAnchor, constant: 10).isActive = true
-//        titleLbl.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20).isActive = true
         titleLbl.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 35).isActive = true
         titleLbl.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -35).isActive = true
         

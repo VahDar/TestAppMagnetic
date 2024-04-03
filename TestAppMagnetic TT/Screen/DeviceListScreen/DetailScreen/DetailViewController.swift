@@ -65,6 +65,7 @@ class DetailViewController: UIViewController {
     private lazy var circleImage: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(named: ImageAssets.circle.rawValue)
+        image.contentMode = .scaleAspectFit
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
@@ -72,12 +73,14 @@ class DetailViewController: UIViewController {
     private lazy var wifiImage: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(named: ImageAssets.wifi.rawValue)
+        image.contentMode = .scaleAspectFit
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
     
     private lazy var statusImage: UIImageView = {
         let image = UIImageView()
+        image.contentMode = .scaleAspectFit
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
