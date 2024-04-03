@@ -12,7 +12,7 @@ extension UIButton {
         let button = UIButton(type: .system)
         button.setTitle(title, for: .normal)
         
-        if let robotoFont = UIFont(name: "Roboto-Regular", size: fontSize) {
+        if let robotoFont = UIFont(name: "Roboto-Bold", size: fontSize) {
             button.titleLabel?.font = robotoFont
         } else {
             button.titleLabel?.font = UIFont.systemFont(ofSize: fontSize)
