@@ -13,6 +13,7 @@ final class InformationView: UIView {
     
     var onscanButtonTap: (() -> Void)?
     
+    
     private lazy var contentView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor.backgroundColorInfoColor
@@ -21,7 +22,7 @@ final class InformationView: UIView {
         return view
     }()
     
-    private lazy var scanButton = UIButton.reusableButton(withTitle: "Scan current network", fontSize: 20)
+    private lazy var scanButton = UIButton.reusableButton(withTitle: "Scan current network")
     
     private lazy var labelWifi: UILabel = {
         let label = UILabel()
@@ -48,9 +49,18 @@ final class InformationView: UIView {
         label.text = "Ready to Scan this network"
         label.font = UIFont(name: "Roboto-Regular", size: 17)
         label.textAlignment = .center
-        label.textColor = UIColor(red: 82/255, green: 88/255, blue: 120/255, alpha: 1)
+        label.textColor = .purpleColor
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
+    }()
+    
+    private lazy var mainStackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [labelWifi, currentWifiLabel])
+        stackView.distribution = .fill
+        stackView.axis = .vertical
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.spacing = 6
+        return stackView
     }()
     
     override init(frame: CGRect) {
@@ -66,33 +76,29 @@ final class InformationView: UIView {
     
     private func setupLayout() {
         self.addSubview(contentView)
-        [scanButton, labelWifi, currentWifiLabel, statusLabel].forEach(contentView.addSubview)
+        [scanButton, mainStackView, statusLabel].forEach(contentView.addSubview)
         
         contentView.snp.makeConstraints { make in
-            make.height.equalTo(198)
-            make.width.equalTo(350)
             make.edges.equalToSuperview()
         }
         
         scanButton.snp.makeConstraints { make in
             make.height.equalTo(50)
-            make.width.equalTo(318)
-            make.top.equalTo(contentView.snp.top).offset(114)
-            make.centerX.equalTo(contentView.snp.centerX)
+            make.top.equalTo(statusLabel.snp.bottom).offset(10)
+            make.left.equalToSuperview().offset(16)
+            make.right.equalToSuperview().offset(-16)
+            make.bottom.equalToSuperview().offset(-24)
         }
         
-        labelWifi.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(16)
-            make.centerX.equalTo(contentView.snp.centerX)
-        }
-        
-        currentWifiLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(35)
-            make.centerX.equalTo(contentView.snp.centerX)
+        mainStackView.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(24)
+            make.left.right.equalToSuperview()
+            make.bottom.equalTo(statusLabel.snp.top).offset(-16)
+            
         }
         
         statusLabel.snp.makeConstraints { make in
-            make.top.equalTo(contentView.snp.top).offset(84)
+            make.top.equalTo(mainStackView.snp.bottom).offset(16)
             make.centerX.equalTo(contentView.snp.centerX)
         }
     }

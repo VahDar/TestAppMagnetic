@@ -17,7 +17,7 @@ class DeviceTableViewCell: UITableViewCell {
     
     private lazy var chevronImage: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(named: ImageAssets.chevron.rawValue)
+        image.image = ImageAssets.chevron.image
         image.contentMode = .scaleAspectFit
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
@@ -25,7 +25,6 @@ class DeviceTableViewCell: UITableViewCell {
     
     private lazy var wifiLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .white
         label.font = UIFont(name: "Roboto-Regular", size: 17)
         label.textColor = .white
         label.textAlignment = .left
@@ -35,9 +34,9 @@ class DeviceTableViewCell: UITableViewCell {
     
     private lazy var ipLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .white
         label.font = UIFont(name: "Roboto-Regular", size: 13)
-        label.textColor = UIColor(red: 82/255, green: 88/255, blue: 120/255, alpha: 1)
+        label.textColor = .grayColor
+        label.numberOfLines = 0
         label.textAlignment = .left
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -56,8 +55,7 @@ class DeviceTableViewCell: UITableViewCell {
     func configure(with model: WifiModel) {
         ipLabel.text = model.ip
         wifiLabel.text = model.name
-        wifiImage.image = model.status ? UIImage(named: ImageAssets.wifiSuccess.rawValue) :
-        UIImage(named: ImageAssets.wifiFail.rawValue)
+        wifiImage.image = model.status ? ImageAssets.wifiSuccess.image : ImageAssets.wifiFail.image
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -68,7 +66,6 @@ class DeviceTableViewCell: UITableViewCell {
         wifiImage.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(16)
             make.top.equalToSuperview().offset(9)
-            make.bottom.equalToSuperview().offset(-9)
             make.width.height.equalTo(36)
         }
         
@@ -76,7 +73,7 @@ class DeviceTableViewCell: UITableViewCell {
             make.top.equalToSuperview().offset(7)
             make.bottom.equalToSuperview().offset(-7)
             make.left.equalTo(wifiImage.snp.right).offset(16)
-            make.right.equalToSuperview().offset(-175)
+            make.right.equalToSuperview().offset(-123)
         }
         
         chevronImage.snp.makeConstraints { make in

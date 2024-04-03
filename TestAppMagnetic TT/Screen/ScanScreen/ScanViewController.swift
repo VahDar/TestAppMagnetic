@@ -10,16 +10,20 @@ import Lottie
 
 class ScanViewController: UIViewController {
     
+    //MARK: - Properties
+    private var scanTask: DispatchWorkItem?
+    
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         layout()
         configureButton()
+        startScanning()
     }
     
     //MARK: - View
-    private lazy var scanButton = UIButton.reusableButton(withTitle: "Start", fontSize: 20)
+    private lazy var scanButton = UIButton.reusableButton(withTitle: "Stop")
     
     private lazy var labelWifi: UILabel = {
         let label = UILabel()
@@ -36,7 +40,7 @@ class ScanViewController: UIViewController {
         label.text = WifiModel.MOCK_USER.name
         label.font = UIFont(name: "Roboto-Bold", size: 28)
         label.textAlignment = .center
-        label.textColor = UIColor(red: 109/255, green: 89/255, blue: 211/255, alpha: 1)
+        label.textColor = .purpleColor
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -53,10 +57,10 @@ class ScanViewController: UIViewController {
     
     private lazy var countWifiLabel: UILabel = {
         let label = UILabel()
-        label.text = "0"
+        label.text = "WifiModel.wifiData.count"
         label.font = UIFont(name: "Roboto-Bold", size: 28)
         label.textAlignment = .center
-        label.textColor = UIColor(red: 109/255, green: 89/255, blue: 211/255, alpha: 1)
+        label.textColor = .purpleColor
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -111,24 +115,30 @@ class ScanViewController: UIViewController {
         }
     }
     
+    //MARK: - Scanning Logic
+    private func startScanning() {
+        countWifiLabel.text = "\(WifiModel.wifiData.count)"
+        radarAnimationView.play()
+        
+        scanTask?.cancel()
+        
+        let task = DispatchWorkItem { [weak self] in
+            guard let self = self else { return }
+            let deviceListViewController = DeviceListViewController()
+            self.navigationController?.pushViewController(deviceListViewController, animated: true)
+        }
+        scanTask = task
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: task)
+    }
+    
     // MARK: - Configure
     private func configureButton() {
         scanButton.addTarget(self, action: #selector(scanButtonTapped), for: .touchUpInside)
     }
     
     @objc private func scanButtonTapped() {
-        if scanButton.title(for: .normal) == "Start" {
-            scanButton.setTitle("Stop", for: .normal)
-            countWifiLabel.text = "\(WifiModel.wifiData.count)"
-            radarAnimationView.play()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 5) { [weak self] in
-                guard let self = self else { return }
-                let deviceListViewController = DeviceListViewController()
-                self.navigationController?.pushViewController(deviceListViewController, animated: true)
-            }
-        } else {
-            scanButton.setTitle("Start", for: .normal)
-            radarAnimationView.stop()
-        }
+        radarAnimationView.stop()
+        scanTask?.cancel()
+        self.navigationController?.popViewController(animated: true)
     }
 }

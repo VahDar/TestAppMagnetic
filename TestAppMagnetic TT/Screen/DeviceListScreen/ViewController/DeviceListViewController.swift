@@ -28,7 +28,7 @@ class DeviceListViewController: UIViewController, UITableViewDelegate, UITableVi
         label.text = "\(WifiModel.wifiData.count)"
         label.font = UIFont(name: "Roboto-Bold", size: 28)
         label.textAlignment = .center
-        label.textColor = UIColor(red: 109/255, green: 89/255, blue: 211/255, alpha: 1)
+        label.textColor = .purpleColor
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -48,7 +48,7 @@ class DeviceListViewController: UIViewController, UITableViewDelegate, UITableVi
         label.text = "WIFI_Name"
         label.textColor = .white
         label.font = UIFont(name: "Roboto-Regular", size: 15)
-        label.textColor = UIColor(red: 82/255, green: 88/255, blue: 120/255, alpha: 1)
+        label.textColor = .grayColor
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -63,7 +63,7 @@ class DeviceListViewController: UIViewController, UITableViewDelegate, UITableVi
     }()
     
     private var tableView: UITableView = {
-        let tableView = UITableView()
+        let tableView = UITableView(frame: .zero, style: .insetGrouped)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
@@ -73,7 +73,7 @@ class DeviceListViewController: UIViewController, UITableViewDelegate, UITableVi
         view.backgroundColor = .mainBackgroundColor
         self.title = "Result"
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        let backButtonImage = UIImage(named: ImageAssets.chevronLeft.rawValue)
+        let backButtonImage = ImageAssets.chevronLeft.image
         let backButton = UIBarButtonItem(image: backButtonImage, style: .plain, target: self, action: #selector(backButtonPressed))
         self.navigationItem.leftBarButtonItem = backButton
         tableView.dataSource = self
@@ -107,8 +107,7 @@ class DeviceListViewController: UIViewController, UITableViewDelegate, UITableVi
         }
     }
     
-    
-    @objc func backButtonPressed() {
+    @objc private func backButtonPressed() {
         self.navigationController?.popViewController(animated: true)
     }
     
@@ -121,6 +120,7 @@ class DeviceListViewController: UIViewController, UITableViewDelegate, UITableVi
         guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: DeviceTableViewCell.self), for: indexPath) as? DeviceTableViewCell else {
             fatalError("Cannot dequeue reusable cell with identifier: \(String(describing: DeviceTableViewCell.self))")
         }
+        
         let model = WifiModel.wifiData[indexPath.row]
         cell.configure(with: model)
         cell.selectionStyle = .none

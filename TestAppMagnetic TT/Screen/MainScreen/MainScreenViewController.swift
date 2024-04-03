@@ -25,10 +25,10 @@ class MainScreenViewController: UIViewController {
     }
     
     //MARK: - View
-    private lazy var infraredButton = CustomButton(icon: UIImage(named: ImageAssets.webcam.rawValue), title: "Infrared Detection")
-    private lazy var bluetoothButton = CustomButton(icon: UIImage(named: ImageAssets.bluetooth.rawValue), title: "Bluetooth Detection")
-    private lazy var magneticButton = CustomButton(icon: UIImage(named: ImageAssets.magnet.rawValue), title: "Magnetic Detection")
-    private lazy var antispyButton = CustomButton(icon: UIImage(named: ImageAssets.lamp.rawValue), title: "Antispy Tips")
+    private lazy var infraredButton = CustomButton(icon: ImageAssets.webcam.image, title: "Infrared Detection")
+    private lazy var bluetoothButton = CustomButton(icon: ImageAssets.bluetooth.image, title: "Bluetooth Detection")
+    private lazy var magneticButton = CustomButton(icon: ImageAssets.magnet.image, title: "Magnetic Detection")
+    private lazy var antispyButton = CustomButton(icon: ImageAssets.lamp.image, title: "Antispy Tips")
     private var contentView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -56,16 +56,13 @@ class MainScreenViewController: UIViewController {
         stackView.distribution = .fillEqually
         stackView.axis = .vertical
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.heightAnchor.constraint(equalToConstant: view.frame.height/2.5).isActive = true
-        stackView.widthAnchor.constraint(equalToConstant: view.frame.height/2.5).isActive = true
-        
         stackView.spacing = 35
         return stackView
     }()
     
     private lazy var imageBackground: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(named: "backgroundMainImage")
+        image.image = ImageAssets.backgroundMainImage.image
         image.alpha = 0.6
         image.contentMode = .scaleAspectFill
         image.clipsToBounds = true
@@ -75,7 +72,7 @@ class MainScreenViewController: UIViewController {
     
     private lazy var wifiImage: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(named: "routerImage")
+        image.image = ImageAssets.routerImage.image
         image.contentMode = .scaleAspectFit
         image.clipsToBounds = true
         image.translatesAutoresizingMaskIntoConstraints = false
@@ -84,7 +81,7 @@ class MainScreenViewController: UIViewController {
     
     private lazy var settingIcon: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(named: "filter")
+        image.image = ImageAssets.filter.image
         image.contentMode = .scaleAspectFill
         image.clipsToBounds = true
         image.translatesAutoresizingMaskIntoConstraints = false
@@ -101,7 +98,7 @@ class MainScreenViewController: UIViewController {
         [mainStackView, imageBackground, wifiImage, informationView, settingIcon].forEach(view.addSubview)
         
         mainStackView.snp.makeConstraints { make in
-            make.top.equalTo(informationView.snp.bottom).offset(16)
+            make.top.equalTo(informationView.snp.bottom).offset(15)
             make.left.equalToSuperview().offset(36)
             make.right.equalToSuperview().offset(-36)
             make.bottom.equalToSuperview().offset(-35)
@@ -120,9 +117,11 @@ class MainScreenViewController: UIViewController {
         }
         
         informationView.snp.makeConstraints { make in
+            
             make.bottom.equalTo(mainStackView.snp.top).offset(-15)
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-20)
+            make.height.lessThanOrEqualTo(198)
         }
         
         settingIcon.snp.makeConstraints { make in

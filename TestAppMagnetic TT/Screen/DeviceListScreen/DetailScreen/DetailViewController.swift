@@ -11,7 +11,6 @@ class DetailViewController: UIViewController {
     
     //MARK: - Properties
     var device: WifiModel?
-    let color = UIColor(red: 82/255, green: 88/255, blue: 120/255, alpha: 1)
     let dividerOne = CustomDividerView()
     let dividerTwo = CustomDividerView()
     let dividerThree = CustomDividerView()
@@ -48,14 +47,14 @@ class DetailViewController: UIViewController {
         label.text = "Camera"
         label.font = UIFont(name: "Roboto-Bold", size: 28)
         label.textAlignment = .center
-        label.textColor = UIColor(red: 109/255, green: 89/255, blue: 211/255, alpha: 1)
+        label.textColor = .purpleColor
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     private lazy var backImage: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(named: ImageAssets.backgroundMainImage.rawValue)
+        image.image = ImageAssets.backgroundMainImage.image
         image.contentMode = .scaleAspectFill
         image.alpha = 0.6
         image.translatesAutoresizingMaskIntoConstraints = false
@@ -64,7 +63,7 @@ class DetailViewController: UIViewController {
     
     private lazy var circleImage: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(named: ImageAssets.circle.rawValue)
+        image.image = ImageAssets.circle.image
         image.contentMode = .scaleAspectFit
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
@@ -72,7 +71,7 @@ class DetailViewController: UIViewController {
     
     private lazy var wifiImage: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(named: ImageAssets.wifi.rawValue)
+        image.image = ImageAssets.wifi.image
         image.contentMode = .scaleAspectFit
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
@@ -95,13 +94,13 @@ class DetailViewController: UIViewController {
     
     private lazy var hostnameLabel = label(text: "Hostname", textColor: .white, textAlignment: .left)
     
-    private lazy var connectWifiLabel = label(text: "Wifi", textColor: color, textAlignment: .right)
+    private lazy var connectWifiLabel = label(text: "Wifi", textColor: .grayColor, textAlignment: .right)
     
-    private lazy var ipLabel = label(text: "", textColor: color, textAlignment: .right)
+    private lazy var ipLabel = label(text: "", textColor: .grayColor, textAlignment: .right)
     
-    private lazy var macLabel = label(text: "", textColor: color, textAlignment: .right)
+    private lazy var macLabel = label(text: "", textColor: .grayColor, textAlignment: .right)
     
-    private lazy var hostLabel = label(text: "", textColor: color, textAlignment: .right)
+    private lazy var hostLabel = label(text: "", textColor: .grayColor, textAlignment: .right)
     
     // MARK: - SetupUI and Constraints
     private func setupUI() {
@@ -117,7 +116,7 @@ class DetailViewController: UIViewController {
         ipLabel.text = device.ip
         macLabel.text = device.macAddress
         hostLabel.text = device.hostname
-        cameraLabel.textColor = device.status ? UIColor(red: 109/255, green: 89/255, blue: 211/255, alpha: 1) : .red
+        cameraLabel.textColor = device.status ? .purpleColor : .red
         statusImage.image = device.status ? UIImage(named: ImageAssets.checkmrk.rawValue) : UIImage(named: ImageAssets.wifiFail.rawValue)
     }
     
@@ -127,22 +126,19 @@ class DetailViewController: UIViewController {
         
         contentView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(280)
-            make.bottom.equalToSuperview().offset(-270)
             make.left.equalToSuperview().offset(20)
             make.right.equalToSuperview().offset(-20)
+            make.bottom.equalTo(hostnameLabel.snp.bottom).offset(13)
         }
         
         backImage.snp.makeConstraints { make in
-            make.height.equalTo(329)
-            make.width.equalTo(390)
             make.top.leading.trailing.equalToSuperview()
         }
         
         circleImage.snp.makeConstraints { make in
             make.top.equalTo(backImage.snp.top).offset(109)
             make.bottom.equalTo(backImage.snp.bottom).offset(-84)
-            make.left.equalTo(backImage.snp.left).offset(137)
-            make.right.equalTo(backImage.snp.right).offset(-137)
+            make.centerX.equalTo(backImage.snp.centerX)
         }
         wifiImage.snp.makeConstraints { make in
             make.top.equalTo(circleImage.snp.top).offset(44)
@@ -231,7 +227,7 @@ class DetailViewController: UIViewController {
         }
     }
     
-    @objc func backButtonPressed() {
+    @objc private func backButtonPressed() {
         self.navigationController?.popViewController(animated: true)
     }
     
