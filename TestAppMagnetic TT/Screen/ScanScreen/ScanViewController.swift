@@ -19,7 +19,16 @@ class ScanViewController: UIViewController {
         setupUI()
         layout()
         configureButton()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         startScanning()
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        scanTask?.cancel()
     }
     
     //MARK: - View
@@ -57,7 +66,7 @@ class ScanViewController: UIViewController {
     
     private lazy var countWifiLabel: UILabel = {
         let label = UILabel()
-        label.text = "WifiModel.wifiData.count"
+        label.text = "\(WifiModel.wifiData.count)"
         label.font = UIFont(name: "Roboto-Bold", size: 28)
         label.textAlignment = .center
         label.textColor = .purpleColor
@@ -75,10 +84,12 @@ class ScanViewController: UIViewController {
     //MARK: - SetupUI and Constraints
     private func setupUI() {
         view.backgroundColor = .mainBackgroundColor
-        view.addSubview(radarAnimationView)
+        self.navigationItem.hidesBackButton = true
+        
     }
     
     private func layout() {
+        view.addSubview(radarAnimationView)
         [labelWifi, currentWifiLabel, deviceLabel, scanButton, countWifiLabel, radarAnimationView].forEach(view.addSubview)
         
         labelWifi.snp.makeConstraints { make in
@@ -118,9 +129,9 @@ class ScanViewController: UIViewController {
     //MARK: - Scanning Logic
     private func startScanning() {
         countWifiLabel.text = "\(WifiModel.wifiData.count)"
-        radarAnimationView.play()
         
         scanTask?.cancel()
+        radarAnimationView.play()
         
         let task = DispatchWorkItem { [weak self] in
             guard let self = self else { return }

@@ -25,7 +25,7 @@ class DeviceTableViewCell: UITableViewCell {
     
     private lazy var wifiLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont(name: "Roboto-Regular", size: 17)
+        label.font = UIFont(name: "Roboto-Medium", size: 17)
         label.textColor = .white
         label.textAlignment = .left
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -34,7 +34,7 @@ class DeviceTableViewCell: UITableViewCell {
     
     private lazy var ipLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont(name: "Roboto-Regular", size: 13)
+        label.font = UIFont(name: "Roboto-Medium", size: 13)
         label.textColor = .grayColor
         label.numberOfLines = 0
         label.textAlignment = .left

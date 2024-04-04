@@ -101,8 +101,7 @@ class DeviceListViewController: UIViewController, UITableViewDelegate, UITableVi
         
         tableView.snp.makeConstraints { make in
             make.top.equalTo(wifiLabel.snp.bottom).offset(32)
-            make.left.equalToSuperview().offset(20)
-            make.right.equalToSuperview().offset(-20)
+            make.left.right.equalToSuperview()
             make.bottom.equalToSuperview()
         }
     }

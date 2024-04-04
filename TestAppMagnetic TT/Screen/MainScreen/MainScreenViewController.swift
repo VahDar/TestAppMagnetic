@@ -111,9 +111,8 @@ class MainScreenViewController: UIViewController {
         
         wifiImage.snp.makeConstraints { make in
             make.top.equalTo(imageBackground.snp.top).offset(107)
-            make.left.equalToSuperview().offset(33)
-            make.right.equalToSuperview().offset(-33)
-            make.bottom.equalTo(informationView.snp.top).offset(-24)
+            make.centerX.equalTo(imageBackground.snp.centerX)
+            make.bottom.equalTo(imageBackground.snp.bottom).offset(-73)
         }
         
         informationView.snp.makeConstraints { make in

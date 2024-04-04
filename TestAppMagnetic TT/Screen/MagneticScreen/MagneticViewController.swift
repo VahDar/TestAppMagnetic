@@ -52,7 +52,7 @@ class MagneticViewController: UIViewController {
     
     private lazy var infoLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont(name: "Roboto-Regular", size: 17)
+        label.font = UIFont(name: "Roboto-Medium", size: 17)
         label.textAlignment = .center
         label.text = "Search checking"
         label.textColor = .white

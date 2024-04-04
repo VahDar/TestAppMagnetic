@@ -15,21 +15,19 @@ class CustomButton: UIButton {
     private var titleLeftConstraint: NSLayoutConstraint!
     private var iconImageView: UIImageView!
     private var titleLbl: UILabel!
-
+    
     // MARK: - Check button size
     override func layoutSubviews() {
         super.layoutSubviews()
-
+        
+            
         let buttonWidth = self.bounds.size.width
         let buttonHeight = self.bounds.size.height
-
-        if buttonWidth < 80 || buttonHeight < 80 {
-            titleLbl.font = UIFont(name: "Roboto-Regular", size: 11)
-            setupForSEConstreints()
-        } else if buttonWidth < 120 || buttonHeight < 120 {
+        
+        if buttonWidth <= 120 || buttonHeight <= 120 {
             titleLbl.font = UIFont(name: "Roboto-Regular", size: 13)
             setupForSEConstreints()
-        } else {
+        } else if buttonWidth >= 125 && buttonHeight >= 125 {
             titleLbl.font = UIFont(name: "Roboto-Regular", size: 17)
             setupForBigScreen()
         }
@@ -65,7 +63,8 @@ class CustomButton: UIButton {
     }
     private func setupForBigScreen() {
         iconImageView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        iconImageView.topAnchor.constraint(equalTo: topAnchor, constant: 25).isActive = true
+        iconImageView.topAnchor.constraint(equalTo: topAnchor, constant: 20).isActive = true
+        iconImageView.heightAnchor.constraint(lessThanOrEqualToConstant: 44).isActive = true
         iconImageView.bottomAnchor.constraint(equalTo: titleLbl.topAnchor, constant: -10).isActive = true
         
         titleLbl.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
@@ -77,14 +76,14 @@ class CustomButton: UIButton {
     
     private func setupForSEConstreints() {
         iconImageView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        iconImageView.topAnchor.constraint(equalTo: topAnchor, constant: 5).isActive = true
-        iconImageView.heightAnchor.constraint(equalToConstant: 22).isActive = true
-        iconImageView.bottomAnchor.constraint(equalTo: titleLbl.topAnchor, constant: -5).isActive = true
+        iconImageView.topAnchor.constraint(equalTo: topAnchor, constant: 20).isActive = true
+        iconImageView.heightAnchor.constraint(lessThanOrEqualToConstant: 22).isActive = true
+        iconImageView.bottomAnchor.constraint(equalTo: titleLbl.topAnchor, constant: -10).isActive = true
         
         titleLbl.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        titleLbl.topAnchor.constraint(equalTo: iconImageView.bottomAnchor, constant: 5).isActive = true
+        titleLbl.topAnchor.constraint(equalTo: iconImageView.bottomAnchor, constant: 10).isActive = true
         titleLbl.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 35).isActive = true
         titleLbl.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -35).isActive = true
-        titleLbl.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5).isActive = true
+        titleLbl.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20).isActive = true
     }
 }
