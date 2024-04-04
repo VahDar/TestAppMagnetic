@@ -30,7 +30,6 @@ enum ImageAssets: String {
     case speedometer = "speedometer"
     case chevron = "chevronRight"
     case chevronLeft = "chevronLeft"
-    
     var image: UIImage? {
         return UIImage(named: self.rawValue)
     }

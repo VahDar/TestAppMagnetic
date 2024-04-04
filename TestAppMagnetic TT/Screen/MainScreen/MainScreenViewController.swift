@@ -63,7 +63,6 @@ class MainScreenViewController: UIViewController {
     private lazy var imageBackground: UIImageView = {
         let image = UIImageView()
         image.image = ImageAssets.backgroundMainImage.image
-        image.alpha = 0.6
         image.contentMode = .scaleAspectFill
         image.clipsToBounds = true
         image.translatesAutoresizingMaskIntoConstraints = false
@@ -110,13 +109,13 @@ class MainScreenViewController: UIViewController {
         }
         
         wifiImage.snp.makeConstraints { make in
-            make.top.equalTo(imageBackground.snp.top).offset(107)
-            make.centerX.equalTo(imageBackground.snp.centerX)
-            make.bottom.equalTo(imageBackground.snp.bottom).offset(-73)
+            make.centerY.equalTo(imageBackground)
+            make.left.equalToSuperview().offset(33)
+            make.right.equalToSuperview().offset(-33.5)
+            make.width.equalTo(wifiImage.snp.height).multipliedBy(16.0/9.0).priority(.high)
         }
         
         informationView.snp.makeConstraints { make in
-            
             make.bottom.equalTo(mainStackView.snp.top).offset(-15)
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-20)
@@ -124,7 +123,6 @@ class MainScreenViewController: UIViewController {
         }
         
         settingIcon.snp.makeConstraints { make in
-            make.height.width.equalTo(21)
             make.top.equalToSuperview().offset(58)
             make.trailing.equalToSuperview().offset(-20)
         }

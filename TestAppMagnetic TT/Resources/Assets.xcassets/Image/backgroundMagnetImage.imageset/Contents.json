@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "BackgroundMagnetImage1.png",
+      "filename" : "backgroundMagnetImage.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "BackgroundMagnetImage1 1.png",
+      "filename" : "backgroundMagnetImage@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "BackgroundMagnetImage1 2.png",
+      "filename" : "backgroundMagnetImage@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

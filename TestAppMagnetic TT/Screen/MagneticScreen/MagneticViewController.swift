@@ -72,7 +72,6 @@ class MagneticViewController: UIViewController {
     private lazy var backgroundImage: UIImageView = {
         let image = UIImageView()
         image.image = ImageAssets.backgroundMagnetImage.image
-        image.alpha = 0.6
         image.contentMode = .scaleAspectFill
         image.clipsToBounds = true
         image.translatesAutoresizingMaskIntoConstraints = false
@@ -158,9 +157,10 @@ class MagneticViewController: UIViewController {
         }
         
         groupImage.snp.makeConstraints { make in
-            make.center.equalTo(backgroundImage)
+            make.centerY.equalTo(backgroundImage)
+            make.left.equalToSuperview().offset(33)
+            make.right.equalToSuperview().offset(-33.5)
             make.height.lessThanOrEqualTo(190)
-            make.width.lessThanOrEqualTo(324)
             make.width.equalTo(groupImage.snp.height).multipliedBy(16.0/9.0).priority(.high)
         }
     }

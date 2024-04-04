@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "RouterImage.png",
+      "filename" : "GroupImage.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "GroupImage@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "GroupImage@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

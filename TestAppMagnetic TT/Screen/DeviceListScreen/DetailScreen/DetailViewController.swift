@@ -56,7 +56,6 @@ class DetailViewController: UIViewController {
         let image = UIImageView()
         image.image = ImageAssets.backgroundMainImage.image
         image.contentMode = .scaleAspectFill
-        image.alpha = 0.6
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()

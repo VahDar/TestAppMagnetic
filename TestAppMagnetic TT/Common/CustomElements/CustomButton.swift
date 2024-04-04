@@ -21,13 +21,13 @@ class CustomButton: UIButton {
         super.layoutSubviews()
         
             
-        let buttonWidth = self.bounds.size.width
-        let buttonHeight = self.bounds.size.height
+        let screenSize = UIScreen.main.bounds.size
+        let screenHeight = max(screenSize.width, screenSize.height)
         
-        if buttonWidth <= 120 || buttonHeight <= 120 {
+        if screenHeight == 560 {
             titleLbl.font = UIFont(name: "Roboto-Regular", size: 13)
             setupForSEConstreints()
-        } else if buttonWidth >= 125 && buttonHeight >= 125 {
+        } else {
             titleLbl.font = UIFont(name: "Roboto-Regular", size: 17)
             setupForBigScreen()
         }
@@ -45,7 +45,11 @@ class CustomButton: UIButton {
         iconImageView.contentMode = .scaleAspectFit
         iconImageView.translatesAutoresizingMaskIntoConstraints = false
         
-        titleLbl.text = title
+        let modifiedTitle = title.split(separator: " ", maxSplits: 1, omittingEmptySubsequences: true)
+                                     .map(String.init)
+                                     .joined(separator: "\n")
+            
+        titleLbl.text = modifiedTitle
         titleLbl.textAlignment = .center
         titleLbl.font = UIFont(name: "Roboto-Regular", size: 17)
         titleLbl.textColor = .white
@@ -61,6 +65,7 @@ class CustomButton: UIButton {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     private func setupForBigScreen() {
         iconImageView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         iconImageView.topAnchor.constraint(equalTo: topAnchor, constant: 20).isActive = true
@@ -69,8 +74,6 @@ class CustomButton: UIButton {
         
         titleLbl.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         titleLbl.topAnchor.constraint(equalTo: iconImageView.bottomAnchor, constant: 10).isActive = true
-        titleLbl.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 35).isActive = true
-        titleLbl.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -35).isActive = true
         titleLbl.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20).isActive = true
     }
     
@@ -82,8 +85,6 @@ class CustomButton: UIButton {
         
         titleLbl.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         titleLbl.topAnchor.constraint(equalTo: iconImageView.bottomAnchor, constant: 10).isActive = true
-        titleLbl.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 35).isActive = true
-        titleLbl.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -35).isActive = true
-        titleLbl.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20).isActive = true
+        titleLbl.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -15).isActive = true
     }
 }
